@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: Bright;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Account</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <script src="https://kit.fontawesome.com/1165876da6.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f4f8;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    margin-right: 15px;
+}
+
+.site-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.login-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333333;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #666666;
+}
+
+.input-group input, .input-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus, .input-group textarea:focus {
+    border-color: #007bff;
+}
+
+.login-btn {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="logo.jpg" class="logo" alt="HealthDrill Logo" height="100px" width="100px">
+        <h2 class="site-title">HealthDrill <br> Care and Knowledge Center</h2>
+    </header>
+    <div class="login-container">
+        <h2> Create a New Account</h2>
+        <form name="Registrationform" id="Registrationform" method="post" action="/SignUp">
+            <div class="input-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Age</label>
+                <input type="text" id="age" name="age" required>
+            </div>
+            <div class="input-group">
+                <label for="mobile">Mobile</label>
+                <input type="tel" id="mobile" name="mobile" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" cols="30" rows="3" required></textarea>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="input-group">
+                <label for="confirmpassword">Confirm Password</label>
+                <input type="password" id="confirmpassword" name="confirmpassword" required>
+            </div>
+            <button type="submit" class="login-btn">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>
