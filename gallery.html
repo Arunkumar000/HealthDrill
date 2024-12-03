@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Gallery </title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0px;
+}
+body{
+    background: black;
+}
+.main{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.img-box{
+    width: 300px; 
+    margin: 10px;
+    transition: all .5s;
+    cursor: pointer;
+}
+.img-box img{
+    width: 100%;
+}
+.img-box:hover{
+    transform: scale(1.05);
+}
+
+.window{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    background: rgba(0, 0, 0, 0.857);
+    transition: all 0.8s;
+}
+.window.open{
+    opacity: 1;
+    pointer-events: all;
+}
+.window img{
+    width: 50%;
+}
+@media(max-width: 1100px){
+    .window .full-img{
+        width: 90%;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="img-box" data-value="1">
+            <a href="caro1.jpg"><img src="caro1.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="2">
+            <a href="caro2.jpg"><img src="caro2.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="3">
+            <a href="caro3.jpg"><img src="caro3.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="4">
+            <a href="caro5.jpg"><img src="caro5.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="5">
+            <a href="caro6.jpg"><img src="caro6.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="6">
+            <a href="caro4.jpg"><img src="caro4.jpg" alt=""></a>
+        </div>
+        <div class="img-box" data-value="7">
+            <a href="f6.jpeg"><img src="f6.jpeg" alt=""></a>
+        </div>    
+        <div class="img-box" data-value="8">
+            <a href="f7.jpeg"><img src="f7.jpeg" alt=""></a>
+        </div>
+    </div>
+
+
+    <div class="window">
+        <img src="" alt="" class="full-img">
+    </div>
+
+    <script>
+const img = document.querySelectorAll(".img-box");
+const win = document.querySelector(".window");
+const fullImg = document.querySelector(".full-img");
+
+img.forEach((imgs) => {
+  imgs.addEventListener("click", () => {
+    const val = imgs.getAttribute("data-value");
+    win.classList.add("open");
+    fullImg.src = `img/${val}.jpg`;
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target.classList.contains("window")) {
+    win.classList.remove("open");
+  }
+});
+    </script>
+</body>
+</html>

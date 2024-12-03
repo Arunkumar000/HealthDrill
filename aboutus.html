@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us </title>
+    
+    <style>
+        /* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+/* Header styles */
+header {
+    background:transparent;
+    color: white;
+    padding: 10px 20px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header ul {
+    list-style: none;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    font-size: 20px;
+    gap: 10px;
+}
+
+header ul li {
+    margin: 0 10px;
+}
+
+header ul li a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header ul li a.active {
+    text-decoration: underline;
+}
+
+/* Main section styles */
+main {
+    padding: 20px;
+}
+
+.about {
+    text-align: center;
+}
+
+.about .team {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.team-member img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    background-color:#45a049;
+    padding: 8px 0 2px 0 ;
+    margin-top: 108px;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <h1><img src="logo.jpg"  height="130px" width="130px"></h1>
+            <ul>
+                <li><a href="aboutus.html">Home</a></li>
+                <li><a href="about-us.html" class="active">About Us</a></li>
+                <li><a href="gallery.html"> Gallery</a></li>
+                <li><a href="contactus.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="about">
+            <h2>About Us</h2>
+            <p>
+                Welcome to Health Advisory, your trusted source for reliable health information and guidance.<br>
+                Our mission is to empower individuals with the knowledge they need to lead healthier lives.
+            </p>
+            <div class="team">
+                <h3>Meet Our Team</h3>
+                <div class="team-member">
+                    <img src=".jpg" alt="Team Member 1">
+                    <h4> Anusha </h4>
+                    <p> Medical Advisor</p>
+                </div>
+                <div class="team-member">
+                    <img src=".jpg" alt="Team Member 2">
+                    <h4> Arun </h4>
+                    <p> Nutrition Expert</p>
+                </div>
+                <div class="team-member">
+                    <img src=".jpg" alt="Team Member 3">
+                    <h4> Arjun </h4>
+                    <p> Developer </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Health Advisory. All rights reserved.</p>
+    </footer>
+    <script>
+
+        // Simple interaction
+    document.addEventListener('DOMContentLoaded', () => {
+    const teamMembers = document.querySelectorAll('.team-member');
+
+    teamMembers.forEach(member => {
+        member.addEventListener('click', () => {
+            alert(`${member.querySelector('h4').textContent} - ${member.querySelector('p').textContent}`);
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
