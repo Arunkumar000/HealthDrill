@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" style="color-scheme: Bright;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best Hospitals</title>
+    <link rel="icon" type="image/png" href="logo.jpg">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-size: 18px; /* Increased font size */
+            line-height: 1.8; /* Increased line height for better readability */
+        }
+        .header {
+            background-color: #f9f9f9;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo-heading-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-heading-container img {
+            margin-right: 10px;
+        }
+        .logo-heading-container h1 {
+            margin: 0;
+            font-size: 22px; /* Increased font size */
+            line-height: 1.2;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-control {
+            font-size: 20px; /* Increased font size for input */
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            font-size: 20px; /* Increased font size for button */
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            display: block;
+            margin: 20px auto; /* Center the button */
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        .card {
+            margin-top: 20px;
+        }
+        footer {
+            background: #343434;
+            padding-top: 30px;
+            margin-top: 50px;
+            text-align: center;
+        }
+        footer * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 18px; /* Increased font size */
+            color: white;
+        }
+        .footer-content h3 {
+            text-align: center;
+            font-size: 24px; /* Increased font size */
+            margin-bottom: 15px;
+        }
+        .footer-content ul {
+            padding: 0;
+        }
+        .footer-content li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        .social-icons i {
+            color: white;
+            font-size: 30px; /* Increased icon size */
+            transition: color 0.3s ease;
+        }
+        .social-icons i:hover {
+            color: #f18930;
+        }
+        .bottom-bar {
+            background: #f18930;
+            text-align: center;
+            padding: 10px 0;
+        }
+        .bottom-bar p {
+            color: #343434;
+            margin: 0;
+            font-size: 20px; /* Increased font size */
+        }
+    </style>
+    <script>
+        function displayHospitals() {
+            const disease = document.getElementById('diseaseInput').value.trim().toLowerCase();
+            const hospitalsList = document.getElementById('hospitalsList');
+            hospitalsList.innerHTML = ""; // Clear the list
+
+            // Sample hospitals data with common diseases
+            const hospitalsData = {
+                "bp": [
+                    { name: "HeartCare Hospital", email: "contact@heartcarehospital.com", phone: "+1 555-123-4567", address: "123 Heart Lane, City" },
+                    { name: "Wellness Heart Hospital", email: "info@wellnessheart.com", phone: "+1 555-234-5678", address: "456 Wellness Blvd, City" }
+                ],
+                "sugar": [
+                    { name: "DiabetesCare Clinic", email: "contact@diabetescare.com", phone: "+1 555-345-6789", address: "789 Diabetes St, City" },
+                    { name: "SugarControl Hospital", email: "info@sugarcontrol.com", phone: "+1 555-456-7890", address: "101 Sugar Rd, City" }
+                ],
+                "thyroid": [
+                    { name: "Thyroid Specialists Center", email: "info@thyroidspecialists.com", phone: "+1 555-567-8901", address: "102 Thyroid Ave, City" },
+                    { name: "EndocrineCare Hospital", email: "contact@endocrinecare.com", phone: "+1 555-678-9012", address: "203 Endocrine Blvd, City" }
+                ],
+                "cholesterol": [
+                    { name: "Cholesterol Control Clinic", email: "contact@cholesterolclinic.com", phone: "+1 555-789-0123", address: "789 Cholesterol Rd, City" },
+                    { name: "Heart and Cholesterol Hospital", email: "info@heartandcholesterol.com", phone: "+1 555-890-1234", address: "101 Heart Blvd, City" }
+                ],
+                "asthma": [
+                    { name: "AsthmaCare Clinic", email: "contact@asthmacare.com", phone: "+1 555-901-2345", address: "234 Asthma St, City" },
+                    { name: "Respiratory Health Hospital", email: "info@respiratoryhealth.com", phone: "+1 555-012-3456", address: "345 Respiratory Rd, City" }
+                ],
+                "cancer": [
+                    { name: "CancerCare Hospital", email: "contact@cancercare.com", phone: "+1 555-111-2345", address: "567 Cancer Ln, City" },
+                    { name: "Oncology Specialists Hospital", email: "info@oncologyspecialists.com", phone: "+1 555-222-3456", address: "678 Oncology Blvd, City" }
+                ],
+                "arthritis": [
+                    { name: "JointHealth Hospital", email: "contact@jointhealth.com", phone: "+1 555-333-4567", address: "789 Joint Rd, City" },
+                    { name: "Arthritis Specialists Clinic", email: "info@arthritisclinic.com", phone: "+1 555-444-5678", address: "101 Arthritis Ave, City" }
+                ],
+                "migraine": [
+                    { name: "Headache Treatment Center", email: "contact@headachecare.com", phone: "+1 555-555-6789", address: "123 Migraine Blvd, City" },
+                    { name: "Migraine Relief Hospital", email: "info@migrainerelief.com", phone: "+1 555-666-7890", address: "234 Headache Rd, City" }
+                ],
+                "depression": [
+                    { name: "Mental Health Clinic", email: "contact@mentalhealthclinic.com", phone: "+1 555-777-8901", address: "123 Mood St, City" },
+                    { name: "DepressionCare Hospital", email: "info@depressioncare.com", phone: "+1 555-888-9012", address: "456 Mood Ave, City" }
+                ],
+                "allergy": [
+                    { name: "Allergy Relief Clinic", email: "contact@allergyrelief.com", phone: "+1 555-999-0123", address: "789 Allergy Rd, City" },
+                    { name: "Allergy Specialists Hospital", email: "info@allergyspecialists.com", phone: "+1 555-000-1234", address: "101 Allergy Blvd, City" }
+                ]
+            };
+
+            if (disease in hospitalsData) {
+                hospitalsData[disease].forEach(hospital => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <strong>${hospital.name}</strong><br>
+                        <em>Email:</em> ${hospital.email}<br>
+                        <em>Phone:</em> ${hospital.phone}<br>
+                        <em>Address:</em> ${hospital.address}
+                    `;
+                    hospitalsList.appendChild(li);
+                });
+            } else {
+                const li = document.createElement('li');
+                li.textContent = "No hospitals found for the specified disease.";
+                hospitalsList.appendChild(li);
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-heading-container">
+            <img src="logo.jpg" alt="HealthDrill Logo" height="50" width="50">
+            <h1>HealthDrill<br>Care and Knowledge Center</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <h2 class="text-center mb-4">Hospitals for Your Disease</h2>
+        <p class="text-center">Enter the name of a disease (e.g., BP, Sugar, Thyroid, etc.) to find hospitals that specialize in it:</p>
+        <div class="form-group">
+            <input type="text" class="form-control" id="diseaseInput" placeholder="Enter Disease (e.g., BP, Sugar, Thyroid)">
+        </div>
+        <button class="btn-submit" onclick="displayHospitals()">Find Hospitals</button>
+
+        <ul id="hospitalsList" class="mt-4"></ul>
+
+        <div class="text-center mt-4">
+            <a href="Diagnisedresult.html" class="btn btn-secondary">Go Back</a>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 footer-content">
+                    <h3>Contact Us</h3>
+                    <p>Email: abc@gmail.com</p>
+                    <p>Phone: +91 565565656</p>
+                    <p>Address: Hyd 123 street</p>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-bar">
+            <p>&copy; 2024 HealthDrill. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
