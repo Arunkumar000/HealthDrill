@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile </title>
+    <style>
+       
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&family=Poppins:wght@400;500;600&display=swap');     
+body {
+    font-family: "poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+    background:transparent;
+    color: rgb(0, 0, 0);
+}
+
+.header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.nav-bar a {
+    margin: 0 10px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.user-profile-icon {
+    display: flex;
+    align-items: center;
+}
+
+.user-profile-icon img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    margin: 20px;
+}
+
+.profile-card {
+    background: white;
+    padding: 20px;
+    margin: 0 auto;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.edit-profile-btn {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit-profile-btn:hover {
+    background: #45a049;
+}
+
+/* Health Data */
+.health-data, .saved-resources {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.saved-resources ul, .health-data ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.saved-resources li, .health-data li {
+    margin: 10px 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #45a049;
+    color: white;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo"><img src="logo.jpg" height="130px" width="130px" alt=""></div>
+        <nav class="nav-bar">
+            <a href="mainhomepage.html">Home</a>
+            <a href="aboutus.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="Medications.html">Services</a>
+            <a href="contactus.html">Contact Us</a>
+        </nav>
+        <div class="user-profile-icon">
+            <img src="profile-icon.png" alt="User Icon">
+            <span> Arun </span>
+        </div>
+    </header>
+
+    <!-- Main Profile Section -->
+    <section class="profile-section">
+        <div class="profile-card">
+            <img src="default-profile.jpg" alt="Profile Picture" class="profile-picture">
+            <h2> Arun </h2>
+            <p>Email: arun.@example.com</p>
+            <p>Location: Hyd ,500043 </p>
+            <p>Health Goal: Improve cardiovascular health</p>
+            <button class="edit-profile-btn">Edit Profile</button>
+        </div>
+    </section>
+
+    <!-- Health Data Section -->
+    <section class="health-data">
+        <h3>Health Insights</h3>
+        <p>Your current BMI is in the healthy range.</p>
+        <h4>Recent Activities</h4>
+        <ul>
+            <li>Read: "10 Tips for Healthy Eating"</li>
+            <li>Consulted with Dr. Jane Smith on Nov 25</li>
+        </ul>
+    </section>
+
+    <!-- Saved Resources Section -->
+    <section class="saved-resources">
+        <h3>Saved Articles</h3>
+        <ul>
+            <li><a href="#">"How to Maintain a Balanced Diet"</a></li>
+            <li><a href="#">"The Benefits of Regular Exercise"</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Health Advisory. All rights reserved.</p>
+        <a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a>
+    </footer>
+
+    <script>
+        document.querySelector(".edit-profile-btn").addEventListener("click", () => {
+            alert("Edit Profile functionality coming soon!");
+        });
+
+    </script>
+</body>
+</html>
